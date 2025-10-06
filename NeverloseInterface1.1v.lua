@@ -1,6 +1,6 @@
 local Library = {}
 
-local NeverloseVersion = "v1.1A."
+local NeverloseVersion = "v1.2A."
 
 local TweenService = game:GetService("TweenService")
 local input = game:GetService("UserInputService")
@@ -124,66 +124,74 @@ function Library:Window(options)
     SG.Parent = game.CoreGui
     SG.Name = "Neverlose"
 
-    Body.Name = "Body"
-    Body.Parent = SG
-    Body.AnchorPoint = Vector2.new(0.5, 0.5)
-    Body.BackgroundColor3 = Color3.fromRGB(9, 8, 13)
-    Body.BorderSizePixel = 0
-    Body.Position = UDim2.new(0.465730786, 0, 0.5, 0)
-    Body.Size = UDim2.new(0, 658, 0, 516)
+-- Body principal
+Body.Name = "Body"
+Body.Parent = SG
+Body.AnchorPoint = Vector2.new(0.5, 0.5)
+Body.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Fundo branco
+Body.BorderSizePixel = 1
+Body.BorderColor3 = Color3.fromRGB(220, 220, 220) -- Borda suave
+Body.Position = UDim2.new(0.5, 0, 0.5, 0)
+Body.Size = UDim2.new(0, 658, 0, 516)
 
-    bodyCorner.CornerRadius = UDim.new(0, 4)
-    bodyCorner.Name = "bodyCorner"
-    bodyCorner.Parent = Body
+local bodyCorner = Instance.new("UICorner")
+bodyCorner.CornerRadius = UDim.new(0, 8)
+bodyCorner.Name = "bodyCorner"
+bodyCorner.Parent = Body
 
- -- Sidebar
+-- Sidebar
 SideBar.Name = "SideBar"
 SideBar.Parent = Body
 SideBar.BackgroundColor3 = Color3.fromRGB(245, 245, 245) -- Branco claro
-SideBar.BorderSizePixel = 0
-SideBar.Size = UDim2.new(0, 187, 0, 516)
+SideBar.BorderSizePixel = 1
+SideBar.BorderColor3 = Color3.fromRGB(220, 220, 220)
+SideBar.Size = UDim2.new(0, 187, 1, 0)
+SideBar.Position = UDim2.new(0, 0, 0, 0)
 
-sidebarCorner.CornerRadius = UDim.new(0, 4)
+local sidebarCorner = Instance.new("UICorner")
+sidebarCorner.CornerRadius = UDim.new(0, 8)
 sidebarCorner.Name = "sidebarCorner"
 sidebarCorner.Parent = SideBar
 
+local sbLine = Instance.new("Frame")
 sbLine.Name = "sbLine"
 sbLine.Parent = SideBar
-sbLine.BackgroundColor3 = Color3.fromRGB(200, 200, 200) -- Linha cinza clara
+sbLine.BackgroundColor3 = Color3.fromRGB(200, 200, 200) -- Linha cinza
 sbLine.BorderSizePixel = 0
-sbLine.Position = UDim2.new(0.99490571, 0, 0, 0)
-sbLine.Size = UDim2.new(0, 3, 0, 516)
+sbLine.Position = UDim2.new(1, -3, 0, 0)
+sbLine.Size = UDim2.new(0, 3, 1, 0)
 
 -- TopBar
 TopBar.Name = "TopBar"
 TopBar.Parent = Body
-TopBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Branco puro
-TopBar.BackgroundTransparency = 0 -- agora visível
+TopBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Branco
+TopBar.BorderSizePixel = 1
 TopBar.BorderColor3 = Color3.fromRGB(220, 220, 220)
-TopBar.BorderSizePixel = 0
-TopBar.Position = UDim2.new(0.25166446, 0, 0, 0)
-TopBar.Size = UDim2.new(0, 562, 0, 49)
+TopBar.Position = UDim2.new(0, 187, 0, 0) -- começa após a sidebar
+TopBar.Size = UDim2.new(1, -187, 0, 50)
 
+local tbLine = Instance.new("Frame")
 tbLine.Name = "tbLine"
 tbLine.Parent = TopBar
-tbLine.BackgroundColor3 = Color3.fromRGB(220, 220, 220) -- Linha cinza
+tbLine.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
 tbLine.BorderSizePixel = 0
-tbLine.Position = UDim2.new(0.0400355868, 0, 1, 0)
-tbLine.Size = UDim2.new(0, 469, 0, 3)
+tbLine.Position = UDim2.new(0.02, 0, 1, -3)
+tbLine.Size = UDim2.new(0.95, 0, 0, 3)
 
 -- Título
 Title.Name = "Title"
 Title.Parent = SideBar
-Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1.000
+Title.BackgroundTransparency = 1
 Title.BorderSizePixel = 0
-Title.Position = UDim2.new(0.0614973232, 0, 0.0213178284, 0)
+Title.Position = UDim2.new(0.05, 0, 0.02, 0)
 Title.Size = UDim2.new(0, 162, 0, 26)
 Title.Font = Enum.Font.ArialBold
 Title.Text = options.text
-Title.TextColor3 = Color3.fromRGB(30, 30, 30) -- Texto escuro sobre fundo branco
-Title.TextSize = 28.000
+Title.TextColor3 = Color3.fromRGB(30, 30, 30)
+Title.TextSize = 28
 Title.TextWrapped = true
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
 
 
     --[[saveBtn.Name = "saveBtn"
