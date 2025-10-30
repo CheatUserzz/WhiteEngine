@@ -15,16 +15,6 @@
     "AllowedHwids": ["43cabec173f34faca69edaab75f65bcc"]
   },
   {
-    "Username": "a",
-    "Password": "a!",
-    "AllowedHwids": ["d4e5f6a7b8c9d0e1f2a3b4c5d6e1f2a3"]
-  },
-  {
-    "Username": "eva",
-    "Password": "password123",
-    "AllowedHwids": ["e5f6a7b8c9d0e1f2a3b4c5d6e1f2a3b4"]
-  },
-  {
     "Username": "frank",
     "Password": "letmein",
     "AllowedHwids": ["f6a7b8c9d0e1f2a3b4c5d6e1f2a3b4c5"]
