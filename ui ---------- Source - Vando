@@ -1,5 +1,4 @@
--- SwebWare GUI Library
--- Feel free to make edits just give credits ty!
+-- Credits to SwebLib
 
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
@@ -11,17 +10,17 @@ Library.__index = Library
 
 -- Configuration
 Library.Theme = {
-Background = Color3.fromRGB(10, 15, 20),       -- fundo bem escuro azul-esverdeado
-Secondary = Color3.fromRGB(15, 25, 30),        -- levemente mais claro, azulado
-Tertiary = Color3.fromRGB(20, 35, 40),         -- ainda mais claro, suave para painéis
-Accent = Color3.fromRGB(0, 170, 180),          -- ciano principal (botões, destaques)
-AccentHover = Color3.fromRGB(0, 200, 200),     -- ciano mais claro no hover
-AccentBright = Color3.fromRGB(0, 255, 230),    -- brilho forte (efeitos, ícones ativos)
-Text = Color3.fromRGB(255, 255, 255),          -- texto branco puro
-TextDark = Color3.fromRGB(200, 230, 230),      -- texto levemente esverdeado/cinza
-TextDarker = Color3.fromRGB(160, 190, 190),    -- texto mais apagado
-Border = Color3.fromRGB(35, 50, 55),           -- bordas azul-escuras sutis
-
+Background = Color3.fromRGB(10, 10, 10)       -- fundo preto intenso
+Secondary = Color3.fromRGB(20, 20, 20)        -- painel secundário, levemente mais claro
+Tertiary = Color3.fromRGB(30, 30, 30)         -- terceiro plano, sutilmente mais claro
+Accent = Color3.fromRGB(200, 30, 30)          -- vermelho principal para botões e destaques
+AccentHover = Color3.fromRGB(230, 50, 50)     -- vermelho mais vivo para hover
+AccentBright = Color3.fromRGB(255, 80, 80)    -- vermelho brilhante, efeitos de destaque
+AccentSecondary = Color3.fromRGB(0, 180, 0)   -- verde para pequenos detalhes, notificações ou checkmarks
+Text = Color3.fromRGB(255, 255, 255)          -- texto principal branco
+TextDark = Color3.fromRGB(180, 180, 180)      -- texto secundário cinza claro
+TextDarker = Color3.fromRGB(120, 120, 120)    -- texto apagado
+Border = Color3.fromRGB(40, 40, 40)           -- bordas escuras, sutis
 }
 
 -- Key System Function
@@ -29,7 +28,7 @@ function Library:CreateKeySystem(config)
 	config = config or {}
 	local correctKey = config.Key or "DefaultKey123"
 	local discordLink = config.DiscordLink or "discord.gg/yourlink"
-	local keyFileName = config.SaveFile or "library_key.txt"
+	local keyFileName = config.SaveFile or "key_library.txt"
 	
 	-- Check if key is already saved
 	local savedKey = nil
